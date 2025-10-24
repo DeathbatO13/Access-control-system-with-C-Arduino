@@ -12,7 +12,7 @@ const byte colPins[4] = { KP_COL_PIN_0, KP_COL_PIN_1, KP_COL_PIN_2, KP_COL_PIN_3
 // Objetos
 KeypadManager keypad(rowPins, colPins);
 DisplayManager display(LCD_I2C_ADDR);
-AccessController access("1234"); // contraseña por defecto: "1234". Cámbiala aquí.
+AccessController access("5879"); // contraseña por defecto: "1234". Cámbiala aquí.
 
 // Variables de entrada
 String inputBuffer = "";
@@ -35,8 +35,8 @@ void loop() {
   if (access.isLocked()) {
     unsigned long rem = access.lockRemainingMs();
     char buf[17];
-    snprintf(buf, sizeof(buf), "Bloqueado: %lus", (rem+999)/1000);
-    display.showMessage("Acceso denegado", String(buf));
+    snprintf(buf, sizeof(buf), "Bloqued: %lus", (rem+999)/1000);
+    display.showMessage("Access Denied", String(buf));
     tone(BUZZER_PIN, 1000, 100); // alerta corta (opcional)
     delay(500);
     return;
@@ -54,7 +54,7 @@ void loop() {
       if (inputBuffer.length() > 0) {
         bool ok = access.verify(inputBuffer);
         if (ok) {
-          display.showMessage("Acceso concedido", "");
+          display.showMessage("Access granted", "");
           digitalWrite(LOCK_PIN, HIGH); // abrir
           // mantener abierto 5s
           delay(5000);
@@ -63,7 +63,7 @@ void loop() {
           inputBuffer = "";
         } else {
           // acceso denegado
-          display.showMessage("Acceso denegado", "Intente otra vez");
+          display.showMessage("Access Denied", "Try Again");
           // sonido de error
           for (int i=0;i<2;i++){
             tone(BUZZER_PIN, 2000, 120);

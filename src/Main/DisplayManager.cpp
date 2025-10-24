@@ -1,9 +1,12 @@
+// DisplayManager.cpp
 #include "DisplayManager.h"
 #include "Config.h"
 
+// CONSTRUCTOR CORREGIDO: Versión de 3 argumentos compatible con tu librería
+// _lcd(Dirección, Columnas, Filas)
 DisplayManager::DisplayManager(uint8_t address)
-: _lcd(address, 16, 2)
-{}
+: _lcd(address, 16, 2) 
+{} 
 
 void DisplayManager::begin(){
   _lcd.init();
@@ -14,14 +17,16 @@ void DisplayManager::begin(){
 void DisplayManager::showWelcome(){
   _lcd.clear();
   _lcd.setCursor(0,0);
-  _lcd.print("Sistema Acceso");
-  _lcd.setCursor(0,1);
-  _lcd.print("Ingrese clave:");
+  _lcd.print(F("Access System")); 
+  _lcd.setCursor(0,1); // Fila 1 (segunda línea)
+  _lcd.print(F("Enter password:")); 
 }
 
 void DisplayManager::showInput(const String& maskedInput){
-  _lcd.setCursor(0,1);
+  // Borra y reescribe solo la segunda línea
+  _lcd.setCursor(0,1); 
   String s = maskedInput;
+  // Rellena con espacios para limpiar la línea
   while (s.length() < 16) s += ' ';
   _lcd.print(s);
 }
