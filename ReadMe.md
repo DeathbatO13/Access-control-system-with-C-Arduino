@@ -1,6 +1,6 @@
 # 🔐 Access Control System with Keypad and LCD
 
-This project implements a **basic access control system** using an **Arduino Uno (ATmega328P)**.  
+This project implements a **basic access control system** using an **Arduino Mega 2560**.  
 The user enters a password through a **4x4 matrix keypad**, and messages are displayed on a **16x2 I²C LCD**.  
 When the password is correct, a **relay or LED** simulates a door lock opening. If incorrect, a **buzzer** sounds an alert.  
 After three failed attempts, the system locks for a period of time.
