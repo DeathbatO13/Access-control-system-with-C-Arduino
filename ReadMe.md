@@ -77,7 +77,7 @@ Default password is defined in `Main.ino`:
 AccessController access("5879");
 ```
 ---
-##🔑 Other key parameters are in Config.h:
+## 🔑 Other key parameters are in Config.h:
 
 ```cpp
 #define INPUT_TIMEOUT_MS 5000UL      // Clear input after 5s of inactivity
