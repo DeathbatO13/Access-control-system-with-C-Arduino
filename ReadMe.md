@@ -53,7 +53,7 @@ After three failed attempts, the system locks for a period of time.
 
 | Component | Description |
 |------------|--------------|
-| **Microcontroller** | Arduino Uno (ATmega328P) |
+| **Microcontroller** | Arduino Mega 2560 (ATmega2560) |
 | **LCD 16x2** | LM016L with PCF8574A (I²C address `0x3F`) |
 | **Keypad 4x4** | Calculator-style matrix keypad (Rows A–D, Cols 1–4) |
 | **Relay / Lock LED** | Connected to pin **A3** |
@@ -77,7 +77,7 @@ Default password is defined in `Main.ino`:
 AccessController access("5879");
 ```
 ---
-## Other key parameters are in Config.h:
+##🔑 Other key parameters are in Config.h:
 
 ```cpp
 #define INPUT_TIMEOUT_MS 5000UL      // Clear input after 5s of inactivity
