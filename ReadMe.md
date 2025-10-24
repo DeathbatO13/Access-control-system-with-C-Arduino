@@ -56,16 +56,16 @@ After three failed attempts, the system locks for a period of time.
 | **Microcontroller** | Arduino Mega 2560 (ATmega2560) |
 | **LCD 16x2** | LM016L with PCF8574A (I²C address `0x3F`) |
 | **Keypad 4x4** | Calculator-style matrix keypad (Rows A–D, Cols 1–4) |
-| **Relay / Lock LED** | Connected to pin **A3** |
-| **Buzzer** | Connected to pin **A4** |
+| **Relay / Lock LED** | Connected to pin **A2** |
+| **Buzzer** | Connected to pin **A3** |
 
 ### I²C Connections
 | LCD Pin | Arduino Pin | Description |
 |----------|--------------|-------------|
 | VCC | 5V | Power |
 | GND | GND | Ground |
-| SDA | A4 | I²C data line |
-| SCL | A5 | I²C clock line |
+| SDA | D20 | I²C data line |
+| SCL | D21 | I²C clock line |
 
 ---
 
