@@ -110,10 +110,6 @@ You can modify these constants to customize system behavior.
 
 - Wire (built-in with Arduino IDE)
 
-## 👨‍💻 Author
-
-*Daniel Alejandro Torres Abella
-Electronic Engineer  — Universidad El Bosque*
 
 ## 📚 License
 
