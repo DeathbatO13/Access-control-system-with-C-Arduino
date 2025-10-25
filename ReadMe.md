@@ -43,6 +43,9 @@ After three failed attempts, the system locks for a period of time.
     │ ├── inicio.png
     │ ├── correcto.png
     │ ├── bloqueado.png
+    │ 
+    ├── simulation/
+    │ ├── Simulacion (Sistema de control de acceso).pdsprj
     │
     └── README.md # Project documentation
 
